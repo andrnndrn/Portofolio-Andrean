@@ -379,7 +379,6 @@ header ul li:nth-child(1) a {
   margin-top: 80px;
 }
 
-
 input[type="radio"] {
   display: none;
 }
@@ -415,9 +414,9 @@ input[type="radio"] {
   border-radius: 100%;
 }
 .navigation {
-  display: flex; 
+  display: flex;
   justify-content: center;
-  gap: 10px; 
+  gap: 10px;
   margin-top: 20px;
 }
 
@@ -605,8 +604,9 @@ input[type="checkbox"] {
     display: none;
     flex-direction: column;
     position: absolute;
-    left: 0;
-    width: 100%;
+    left: -30px;
+    top: 30px;
+    width: 400px;
     background-color: #0d0d0d;
     padding: 20px 50px;
   }
@@ -682,6 +682,7 @@ input[type="checkbox"] {
 
   .header h2 {
     font-size: 20px;
+    margin-bottom: 5px;
   }
 
   .header h3 {
@@ -694,5 +695,48 @@ input[type="checkbox"] {
 
   .navigation label {
     padding: 10px;
+  }
+
+  .form {
+    width: 100%;
+  }
+  .info {
+    height: 368px;
+  }
+
+  .info .body-form {
+    gap: 13px;
+    width: fit-content;
+    margin: 0;
+    margin-top: 22px;
+    margin-left: 20px;
+  }
+
+  .testimonial {
+    display: block;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  .testimonial.hide {
+    opacity: 0;
+    display: none;
+  }
+
+  /* Slide 1 terpilih, sembunyikan slide 2 dan 3 */
+  #slide1:checked ~ .testimonial-container .testimonial:nth-child(2),
+  #slide1:checked ~ .testimonial-container .testimonial:nth-child(3) {
+    opacity: 0;
+    display: none;
+  }
+
+  /* Slide 2 terpilih, sembunyikan slide 1 dan 3 */
+  #slide2:checked ~ .testimonial-container .testimonial:nth-child(2) {
+    opacity: 0;
+    display: none;
+  }
+
+  .icon-contact a {
+    font-size: 20px;
   }
 }
