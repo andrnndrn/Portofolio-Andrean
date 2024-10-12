@@ -34,10 +34,10 @@ header h1 {
   text-transform: uppercase;
   justify-content: center;
 }
-
 .logo {
   display: none;
 }
+
 header ul {
   display: flex;
   gap: 3rem;
@@ -617,7 +617,7 @@ input[type="checkbox"] {
   .title-wrapper {
     margin-top: 50px;
   }
-  header h1 {
+  .logo {
     display: block;
     position: absolute;
     font-size: 25px;
@@ -752,5 +752,9 @@ input[type="checkbox"] {
 
   .icon-contact a {
     font-size: 20px;
+  }
+
+  .header h3::after {
+    top: 60px;
   }
 }
