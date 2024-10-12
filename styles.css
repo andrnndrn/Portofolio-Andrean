@@ -88,6 +88,7 @@ header ul li:nth-child(1) a {
   min-height: 80vh;
   width: 70%;
   margin: auto;
+  margin-top: 50px;
 
   display: flex;
   align-items: center;
@@ -308,6 +309,10 @@ header ul li:nth-child(1) a {
   object-fit: cover;
 }
 
+.project-image {
+  transition: 0.2s ease-in-out;
+}
+
 .project-image:hover {
   transform: scale(1.05);
 }
@@ -338,7 +343,7 @@ header ul li:nth-child(1) a {
   color: white;
   font-size: 20px;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: 0.2s ease-in;
 }
 
 .check-project a:hover {
@@ -420,7 +425,7 @@ input[type="radio"] {
   cursor: pointer;
   background-color: crimson;
   border-radius: 50%;
-  padding: 5px;
+  padding: 2px 3px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -512,6 +517,12 @@ textarea {
   display: flex;
   justify-content: center;
   align-items: center;
+  background: crimson;
+  transition: 0.1s ease-in;
+}
+
+.icon-contact a:hover {
+  transform: scale(1.1);
 }
 
 .btn-submit {
