@@ -270,7 +270,7 @@ header ul li:nth-child(1) a {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
-  width: 100px;
+  width: 150px;
   height: 5px;
   background-color: crimson;
   border-radius: 1rem;
