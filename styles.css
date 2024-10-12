@@ -35,6 +35,9 @@ header h1 {
   justify-content: center;
 }
 
+.logo {
+  display: none;
+}
 header ul {
   display: flex;
   gap: 3rem;
@@ -620,7 +623,10 @@ input[type="checkbox"] {
     font-size: 25px;
     top: 10px;
   }
-
+  
+  .menu h1 {
+    display: none;
+  }
   .menu ul {
     flex-direction: column;
   }
