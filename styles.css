@@ -534,7 +534,7 @@ textarea {
   font-weight: bold;
   letter-spacing: 2px;
   cursor: pointer;
-  transition: 0.1s ease-in;
+  transition: 0.3s ease-out;
   border: none;
 }
 
