@@ -702,6 +702,7 @@ input[type="checkbox"] {
   }
   .info {
     height: 368px;
+    padding: 5px 4% 85px;
   }
 
   .info .body-form {
