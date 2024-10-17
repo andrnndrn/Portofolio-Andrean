@@ -398,6 +398,7 @@ input[type="radio"] {
   background-color: #0d0d0d;
   border-radius: 10px;
   text-align: center;
+  width: 100%;
 }
 
 .testimonial p {
