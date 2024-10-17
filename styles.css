@@ -250,6 +250,15 @@ header ul li:nth-child(1) a {
   margin: 30px auto 0 auto;
 }
 
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 5rem;
+  margin-top: 20px;
+  padding: 0 20px;
+}
+
 .header h2 {
   font-size: 25px;
   color: crimson;
@@ -261,13 +270,13 @@ header ul li:nth-child(1) a {
 .header h3 {
   font-size: 50px;
   position: relative;
-  margin-bottom: 5rem;
+  margin-bottom: 1rem;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 3px;
 }
 
-.header h3::after {
+/* .header h3::after {
   content: "";
   position: absolute;
   left: 50%;
@@ -277,7 +286,7 @@ header ul li:nth-child(1) a {
   height: 5px;
   background-color: crimson;
   border-radius: 1rem;
-}
+} */
 
 .image {
   width: 320px;
@@ -314,6 +323,7 @@ header ul li:nth-child(1) a {
 
 .project-image {
   transition: 0.2s ease-in-out;
+  width: 100%;
 }
 
 .project-image:hover {
@@ -596,6 +606,13 @@ input[type="checkbox"] {
 }
 
 @media only screen and (max-width: 768px) {
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #111;
+  }
+
   .hamburger {
     display: block;
     position: absolute;
@@ -607,10 +624,10 @@ input[type="checkbox"] {
   .menu {
     display: none;
     flex-direction: column;
-    position: absolute;
-    left: -30px;
-    top: 30px;
-    width: 400px;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    width: 100%;
     background-color: #0d0d0d;
     padding: 20px 50px;
   }
@@ -618,13 +635,14 @@ input[type="checkbox"] {
   .title-wrapper {
     margin-top: 50px;
   }
+
   .logo {
     display: block;
     position: absolute;
     font-size: 25px;
     top: 10px;
   }
-  
+
   .menu h1 {
     display: none;
   }
@@ -715,7 +733,7 @@ input[type="checkbox"] {
     padding: 5px 4% 85px 4%;
   }
 
-  .header-form p{
+  .header-form p {
     margin-top: 10px;
   }
 
