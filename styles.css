@@ -773,6 +773,9 @@ input[type="checkbox"] {
     max-width: 100%;
   }
 
+  .project-image {
+    filter: grayscale(0);
+  }
   .navigation label {
     padding: 10px;
   }
