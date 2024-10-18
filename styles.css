@@ -487,13 +487,13 @@ textarea {
   padding: 12px 0;
   border: none;
   outline: none;
-  font-weight: bold;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: none;
   background-color: transparent;
   border-bottom: 1px solid crimson;
   color: crimson;
+  font-size: large;
 }
 
 .container-form {
