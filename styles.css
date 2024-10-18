@@ -435,18 +435,23 @@ input[type="radio"] {
 }
 
 .navigation label {
-  cursor: pointer;
-  background-color: crimson;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
-  padding: 2px 3px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.1rem;
+  background: #ccc;
+  cursor: pointer;
+  transition: background 0.3s; /* Transisi untuk background dots */
 }
 
+
 .navigation label:hover {
-  background-color: darkred;
+  background: #666;
+}
+
+#slide1:checked ~ .navigation label:nth-child(1),
+#slide2:checked ~ .navigation label:nth-child(2),
+#slide3:checked ~ .navigation label:nth-child(3) {
+  background: #ff0000; /* Ganti warna untuk slide aktif */
 }
 
 /* Menggeser slide berdasarkan radio button yang dipilih */
@@ -486,7 +491,7 @@ textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: none;
-  background-color: #0d0d0d;
+  background-color: transparent;
   border-bottom: 1px solid crimson;
   color: crimson;
 }
@@ -497,9 +502,35 @@ textarea {
   align-items: center;
 }
 
+input {
+  background: transparent;
+  color: crimson;
+}
+
+/* Menghilangkan background putih saat autofill */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-text-fill-color: crimson !important;
+  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Style untuk suggestion dropdown */
+input::-webkit-calendar-picker-indicator {
+  display: none !important;
+}
+
+/* Chrome/Safari/Opera */
+input:-webkit-autofill option {
+  background-color: transparent !important;
+  color: crimson !important;
+}
+
 .form {
-  background-color: #0d0d0d;
+  background-color: transparent;
   padding: 3%;
+  width: 40%;
 }
 
 .info {
@@ -509,6 +540,7 @@ textarea {
   flex-direction: column;
   border: 1px solid crimson;
   border-radius: 10px;
+  width: 30%;
 }
 .header-form {
   justify-content: center;
@@ -519,7 +551,7 @@ textarea {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  margin: 50px;
+  margin: 50px 10px 50px 10px;
 }
 
 .icon-contact a {
@@ -603,6 +635,14 @@ input[type="checkbox"] {
 
 .menu ul li {
   text-align: center;
+}
+
+.swal2-confirm {
+  background-color: white !important; /* Ganti dengan warna tombol konfirmasi yang diinginkan */
+  color: black !important; 
+  border-radius: 10px !important;
+  transition: 0.3s ease-out !important;
+  font-weight: bold !important;
 }
 
 @media only screen and (max-width: 768px) {
@@ -731,6 +771,10 @@ input[type="checkbox"] {
   .info {
     height: 368px;
     padding: 5px 4% 85px 4%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
   }
 
   .header-form p {
