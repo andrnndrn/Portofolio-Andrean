@@ -298,6 +298,12 @@ header ul li:nth-child(1) a {
   height: 320px;
   border-radius: 50%;
   object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
+}
+
+.image img:hover {
+  filter: grayscale(0%);
 }
 
 .content {
@@ -322,12 +328,15 @@ header ul li:nth-child(1) a {
 }
 
 .project-image {
-  transition: 0.2s ease-in-out;
+  transition: 1s ease-in-out;
   width: 100%;
+  filter: grayscale(100%);
+  transition: filter 0.5s ease;
 }
 
 .project-image:hover {
   transform: scale(1.05);
+  filter: grayscale(0%);
 }
 
 .project-content {
@@ -426,7 +435,11 @@ input[type="radio"] {
 
 .testimonial img {
   border-radius: 100%;
+  filter: grayscale(100%);
+  object-fit: cover;
 }
+
+
 .navigation {
   display: flex;
   justify-content: center;
@@ -442,7 +455,6 @@ input[type="radio"] {
   cursor: pointer;
   transition: background 0.3s; /* Transisi untuk background dots */
 }
-
 
 .navigation label:hover {
   background: #666;
@@ -639,7 +651,7 @@ input[type="checkbox"] {
 
 .swal2-confirm {
   background-color: white !important; /* Ganti dengan warna tombol konfirmasi yang diinginkan */
-  color: black !important; 
+  color: black !important;
   border-radius: 10px !important;
   transition: 0.3s ease-out !important;
   font-weight: bold !important;
