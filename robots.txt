@@ -1,0 +1,9 @@
+# Allow all crawlers to access everything except the contact page
+User-agent: *
+Disallow: /contact
+
+# Allow indexing on all other pages
+Allow: /
+
+# Sitemap location
+Sitemap: https://www.andrnnrdn.my.id/sitemap.xml
