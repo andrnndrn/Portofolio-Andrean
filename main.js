@@ -8,70 +8,76 @@ document
     const message = document.getElementById("message").value;
 
     const formData = {
-      to: "andreannrdn@gmail.com", // Ganti dengan email Anda
+      to: "andreannrdn@gmail.com",
       name: name,
       subject: subject,
       text: message,
     };
 
+    function showAlert(title) {
+      Swal.fire({
+        title: title,
+        showClass: {
+          popup: `
+            animate__animated
+            animate__fadeInUp
+            animate__faster
+          `,
+        },
+        hideClass: {
+          popup: `
+            animate__animated
+            animate__fadeOutDown
+            animate__faster
+          `,
+        },
+        background: "crimson",
+        color: "white",
+        confirmButtonText: "Okay",
+      });
+    }
+
     fetch("https://lumoshive-academy-email-api.vercel.app/send-email", {
       method: "POST",
       headers: {
-        "x-api-key": "RJS1-202402", // Ganti dengan x-api-key Anda yang valid
+        "x-api-key": "RJS1-202402",
         "Content-Type": "application/json",
       },
       body: JSON.stringify(formData),
     })
-      .then((response) => response.json()) // Hanya mengembalikan respons sebagai JSON
-      .then((data) => {
+      .then((response) => {
+        if (!response.ok) {
+          return response.json().then((errorData) => {
+            let errorMessage;
+
+            switch (response.status) {
+              case 400:
+                errorMessage = "Bad Request. Please check your input.";
+                break;
+              case 500:
+                errorMessage = "Internal Server Error. Please try again later.";
+                break;
+              default:
+                errorMessage = `Error: ${errorData.message}`;
+            }
+            throw new Error(errorMessage);
+          });
+        }
+        return response.json();
+      })
+      .then(() => {
         document.getElementById("contact-form").reset();
-        Swal.fire({
-          title: "Message Sent Successfully!",
-          showClass: {
-            popup: `
-              animate__animated
-              animate__fadeInUp
-              animate__faster
-            `,
-          },
-          hideClass: {
-            popup: `
-              animate__animated
-              animate__fadeOutDown
-              animate__faster
-            `,
-          },
-          background: "crimson", // Ganti dengan warna latar belakang pop-up
-          color: "white",
-          confirmButtonText: "Okay",
-        });
-        // alert("Message sent successfully!");
+        showAlert("Message Sent Successfully!");
       })
       .catch((error) => {
-        console.error("Error:", error);
-        Swal.fire({
-          title: "Failed to Send Message. Please Try Again Later.",
-          showClass: {
-            popup: `
-                animate__animated
-                animate__fadeInUp
-                animate__faster
-              `,
-          },
-          hideClass: {
-            popup: `
-                animate__animated
-                animate__fadeOutDown
-                animate__faster
-              `,
-          },
-        });
-        // alert("Failed to Send Message. Please Try Again Later.");
+        // console.error("Error:", error);
+        showAlert(error.message);
       });
   });
 
+
+// untuk slider testimonial
 document.addEventListener("DOMContentLoaded", function () {
-  // Mengambil elemen yang diperlukan
   const slides = document.querySelectorAll('input[name="slider"]');
   let currentSlide = 0;
   let slideInterval;

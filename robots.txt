@@ -1,6 +1,5 @@
-# Allow all crawlers to access everything except the contact page
 User-agent: *
-Disallow: /contact
+Disallow:
 
 # Allow indexing on all other pages
 Allow: /
