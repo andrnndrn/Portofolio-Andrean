@@ -480,63 +480,39 @@ input[type="text"],
 input[type="subject"],
 textarea {
   width: 100%;
-  padding: 12px 0;
+  padding: 12px 10px;
   border: none;
   outline: none;
   margin-top: 6px;
   margin-bottom: 16px;
   resize: none;
-  background-color: transparent;
-  border-bottom: 1px solid crimson;
+  border-radius: 10px;
   color: crimson;
   font-size: large;
 }
 
 .container-form {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input {
-  background: transparent;
-  color: crimson;
-}
-
-/* Menghilangkan background putih saat autofill */
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus {
-  -webkit-text-fill-color: crimson !important;
-  -webkit-box-shadow: 0 0 0 30px transparent inset !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
-
-/* Style untuk suggestion dropdown */
-input::-webkit-calendar-picker-indicator {
-  display: none !important;
-}
-
-/* Chrome/Safari/Opera */
-input:-webkit-autofill option {
-  background-color: transparent !important;
-  color: crimson !important;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 16px;
+  background-color: #0d0d0d;
+  border-radius: 10px;
+  margin: 0 152px;
+  padding: 40px;
 }
 
 .form {
-  background-color: transparent;
-  padding: 3%;
-  width: 40%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .info {
-  background-color: crimson;
-  padding: 85px 4%;
   display: flex;
   flex-direction: column;
-  border: 1px solid crimson;
-  border-radius: 10px;
-  width: 30%;
+  justify-content: center;
+  gap: 16px;
+  padding: 0 60px;
 }
 .header-form {
   justify-content: center;
@@ -546,7 +522,7 @@ input:-webkit-autofill option {
 .info .body-form {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  gap: 20px;
   margin: 50px 10px 50px 10px;
 }
 
@@ -558,8 +534,7 @@ input:-webkit-autofill option {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: crimson;
-  transition: 0.1s ease-in;
+  transition: transform 0.1s ease-in;
 }
 
 .icon-contact a:hover {
@@ -782,11 +757,10 @@ input[type="checkbox"] {
   }
 
   .info .body-form {
-    gap: 13px;
     width: fit-content;
     margin: 0;
     margin-top: 40px;
-    margin-left: 10px;
+
   }
 
   .testimonial {
@@ -801,7 +775,7 @@ input[type="checkbox"] {
   }
 
   .icon-contact a {
-    font-size: 20px;
+    font-size: 30px;
   }
 
   .image-mobile img {
@@ -809,5 +783,11 @@ input[type="checkbox"] {
   }
   .image-desktop img {
     display: none;
+  }
+
+  .container-form {
+    grid-template-columns: 1fr;
+    margin: auto;
+    background-color: transparent;
   }
 }
