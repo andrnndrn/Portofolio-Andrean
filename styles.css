@@ -790,4 +790,12 @@ input[type="checkbox"] {
     margin: auto;
     background-color: transparent;
   }
+
+  #slide1:checked ~ .testimonial-container .testimonial:nth-child(2),
+  #slide1:checked ~ .testimonial-container .testimonial:nth-child(3) {
+    display: none;
+  }
+  #slide2:checked ~ .testimonial-container .testimonial:nth-child(3) {
+    display: none;
+  }
 }
