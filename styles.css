@@ -776,7 +776,6 @@ input[type="checkbox"] {
   }
 
   .image-mobile img {
-    width: 100%;
     height: 290px;
     border-radius: 50%;
     object-fit: cover;
